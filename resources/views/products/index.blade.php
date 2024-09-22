@@ -52,7 +52,8 @@
                 <th>CATEGORIA</th>
                 <th>QTD.ESTOQUE</th>
                 <th>VALOR</th>
-                <th>OPÇÕES</th>
+                <th>EDITAR</th>
+                <th>DELETAR</th>
             </tr>
         </thead>
         <tbody>
@@ -66,7 +67,13 @@
                 <td> R${{ $product->valor_venda }} </td>
                 <td>
                      <a href=" {{ url('/edit/product/'. $product->id) }} "><button>EDITAR</button></a> |
-                     <a href=" {{ url('/destroy/product/'. $product->id) }} "><button>DELETAR</button></a>
+                </td>
+                <td>
+                    <form action=" {{ route('product.destroy', $product->id) }} " method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" value="DELTAR">DELETAR</button>
+                    </form>
                 </td>
 
 

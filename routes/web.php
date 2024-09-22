@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/test-layout', function ()
+{
+    return view('test-layout');
+
+});
 
 
 ###################### AQUI ESTÃO AS ROTAS DOS MEU CONTROLADOR PRODUTO ##############

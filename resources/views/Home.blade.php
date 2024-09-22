@@ -14,8 +14,8 @@
         <nav>
             <table>
                 <tr>
-                    <td> <a href=" {{ url('/home') }} "> <button> Home</button></a> </td>
-                    <td> <a href=" {{ url('/products/create') }} "> <button> Cadastrar Produtos</button></a></td>
+                    <td> <a href=" {{ url('/') }} "> <button> Home</button></a> </td>
+                    <td> <a href=" {{ url('/product/create') }} "> <button> Cadastrar Produtos</button></a></td>
                     <td> <a href=" {{ url('/products') }} "> <button> Listar Produtos</button></a></td>
 
                 </tr>
