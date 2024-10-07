@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         $products         = Product::orderBy('created_at', 'desc')->get();
-        return view('products.index')
+        return view('pages.products.index')
                 ->with('products', $products);
 
     }
@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function create()
     {
         // Retorna apenas a minha view
-        return view('products.create');
+        return view('pages.products.create');
 
     }
 
@@ -66,7 +66,7 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
-        return view('products.edit', compact('product'));
+        return view('pages.products.edit', compact('product'));
     }
 
     /**
