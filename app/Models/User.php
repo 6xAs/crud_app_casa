@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -19,6 +20,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'cpf',
+        'cnpj',
+        'endereco',
+        'sexo',
+        'img_user',
         'password',
     ];
 
@@ -44,4 +50,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    ####################### 😍😍😍 RELACIONAMENTOS COMEÇAM AQUI 😍😍😍 ###########################
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class, 'user_id');
+    }
+
 }

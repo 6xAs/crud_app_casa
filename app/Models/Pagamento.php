@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Pagamento extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'pedido_id',
+        'tipo',
+        'status',
+    ];
+
+    ####################### 😍😍😍 RELACIONAMENTOS COMEÇAM AQUI 😍😍😍 ###########################
+    // Pagamento pertence a pedido através do pedido_id
+    public function pedido()
+    {
+        return $this->belongsTo(Pedido::class, 'pedido_id');
+    }
+}
